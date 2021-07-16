@@ -1,0 +1,30 @@
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+#funds {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#funds td, #funds th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#funds tr:nth-child(even){background-color: #f2f2f2;}
+
+#funds tr:hover {background-color: #ddd;}
+
+#funds th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}

@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+	</head>
 <body>
-
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
-
+	<div class="header">
+	  <h1>Mutual Fund Monitoring App</h1>
+	</div>
+	</br>
+	<div id="demo"></div>
+	<script type="text/javascript">
+		var colNames = ["Mutual Fund name",
+		"NAV Value", "Moneycontrol Link"];
+		var mfNames = ["Design True caller",
+		"Design Snake and Ladder Game",
+		"Cab Booking like Uber, Ola"];
+		var navArray = [90, 65, 87];
+		var links = ["Design True caller",
+		"Design Snake and Ladder Game",
+		"Cab Booking like Uber, Ola"];
+		var table = "<table id='funds'> <tr><th>Mutual Fund name</th><th>NAV Value</th><th>Moneycontrol Link</th></tr>";
+		var i;
+		for(i = 0; i < 3; i++){
+			table = table + "<tr><td>";
+			table = table + mfNames[i] + "</td><td>";
+			table = table + navArray[i] + "</td><td>";
+			table = table + links[i] + "</td></tr>";
+		}
+		table = table + "</table>";
+		document.getElementById("demo").innerHTML = table;
+	</script>
 </body>
 </html>
