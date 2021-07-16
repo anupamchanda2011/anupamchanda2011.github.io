@@ -10,25 +10,43 @@
 	</br>
 	<div id="demo"></div>
 	<script type="text/javascript">
+		var mfUrl = " https://api.mfapi.in/mf/";
 		var colNames = ["Mutual Fund name",
-		"NAV Value", "Moneycontrol Link"];
-		var mfNames = ["Design True caller",
-		"Design Snake and Ladder Game",
-		"Cab Booking like Uber, Ola"];
-		var navArray = [90, 65, 87];
-		var links = ["Design True caller",
-		"Design Snake and Ladder Game",
-		"Cab Booking like Uber, Ola"];
+		"NAV Value", "Current NAV Limit"];
+		var mfNames = ["Axis Bluechip Fund - Direct Plan - Growth",
+		"SBI Blue Chip Fund - Direct Plan - Growth",
+		"ICICI Prudential Bluechip Fund - Direct Plan - Growth"];
+		var links = ["https://www.moneycontrol.com/mutual-funds/nav/axis-bluechip-fund-direct-plan-growth/MAA181", "https://www.moneycontrol.com/mutual-funds/nav/sbi-blue-chip-fund-direct-plan-growth/MSB532", "https://www.moneycontrol.com/mutual-funds/nav/icici-prudential-bluechip-fund-direct-plan-growth/MPI1134"]
+		var mfIds = ["120465", "119598", "120586"];
+		var navLimits = [50, 57, 60];
 		var table = "<table id='funds'> <tr><th>Mutual Fund name</th><th>NAV Value</th><th>Moneycontrol Link</th></tr>";
 		var i;
 		for(i = 0; i < 3; i++){
-			table = table + "<tr><td>";
-			table = table + mfNames[i] + "</td><td>";
-			table = table + navArray[i] + "</td><td>";
-			table = table + links[i] + "</td></tr>";
+			var mfDetails = httpGet(mfUrl + mfIds[i]);
+			var currentNAV = parseInt(mfDetails.data[0].nav);
+			if(currentNAV >= navLimits[i]){
+				table = table + "<tr><td><a href='";
+				table = table + links[i] + "'>";
+				table = table + mfNames[i] + "</a></td><td>";
+				table = table + currentNAV + "</td><td>";
+				table = table + navLimits[i] + "</td></tr>";
+			}
+			else{
+				table = table + "<tr style='background-color:#14f514;'><td><a href='";
+				table = table + links[i] + "'>";
+				table = table + mfNames[i] + "</a></td><td>";
+				table = table + currentNAV + "</td><td>";
+				table = table + navLimits[i] + "</td></tr>";
+			}
 		}
 		table = table + "</table>";
 		document.getElementById("demo").innerHTML = table;
+		function httpGet(theUrl){
+    		var xmlHttp = new XMLHttpRequest();
+    		xmlHttp.open( "GET", theUrl, false );
+    		xmlHttp.send( null );
+    		return JSON.parse(xmlHttp.responseText);
+		}
 	</script>
 </body>
 </html>
