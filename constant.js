@@ -15,7 +15,14 @@ const mfIds = [
 	"120586"
 ];
 const navLimits = [
-	50,
+	40,
 	57,
 	60
 ];
+
+function httpGet(theUrl){
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false );
+    xmlHttp.send( null );
+    return JSON.parse(xmlHttp.responseText);
+}

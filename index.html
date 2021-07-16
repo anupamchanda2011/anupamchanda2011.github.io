@@ -13,7 +13,7 @@
 	<script type="text/javascript">
 		var table = "<table id='funds'> <tr><th>Mutual Fund name</th><th>NAV Value</th><th>Current NAV Limit</th></tr>";
 		var i;
-		for(i = 0; i < 3; i++){
+		for(i = 0; i < mfNames.length; i++){
 			var mfDetails = httpGet(mfUrl + mfIds[i]);
 			var currentNAV = parseInt(mfDetails.data[0].nav);
 			if(currentNAV >= navLimits[i]){
@@ -33,12 +33,6 @@
 		}
 		table = table + "</table>";
 		document.getElementById("demo").innerHTML = table;
-		function httpGet(theUrl){
-    		var xmlHttp = new XMLHttpRequest();
-    		xmlHttp.open( "GET", theUrl, false );
-    		xmlHttp.send( null );
-    		return JSON.parse(xmlHttp.responseText);
-		}
 	</script>
 </body>
 </html>
