@@ -21,10 +21,10 @@ function drawTable(table, mfNames, mfUrl, links, navLimits, mfIds, divId){
 		table = table + navLimits[i] + "</td>";
 		var diff = (mfDetails.data[0].nav - mfDetails.data[1].nav).toFixed(2);
 		if(diff < 0){
-			table = table + "<td style='color:green'>";
+			table = table + "<td style='color:red'>";
 		}
 		else{
-			table = table + "<td style='color:red'>";
+			table = table + "<td style='color:green'>";
 		}
 		table = table + diff + "</td><td><a href='";
 		table = table + links[i] + "'>Links</a></td></tr>";
