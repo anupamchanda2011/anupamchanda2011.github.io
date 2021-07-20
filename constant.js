@@ -18,14 +18,14 @@ const largeCapMFIds = [
 	"119598",
 	"120586",
 	"118825",
-	"119528",
+	"119528"
 ];
 const largeCapNAVLimits = [
 	50,
 	57,
 	60,
 	75,
-	330,
+	330
 ];
 const midCaps = [
 	"HDFC Mid-Cap Opportunities Fund - Direct Plan - Growth"
