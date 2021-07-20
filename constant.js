@@ -1,4 +1,8 @@
 const mfUrl = " https://api.mfapi.in/mf/";
+const mfGroups = [
+	"largeCaps",
+	"midCaps"
+];
 const largeCaps = [
 	"Axis Bluechip Fund - Direct Plan - Growth",
 	"SBI Blue Chip Fund - Direct Plan - Growth",
@@ -38,4 +42,20 @@ const midCapMFIds = [
 ];
 const midCapNAVLimits = [
 	90
+];
+const focusedFunds = [
+	"Axis Focused 25 Fund - Growth",
+	"SBI Focused Equity Fund - Regular Plan - Growth"
+];
+const focusedFundsLinks = [
+ 	"https://www.moneycontrol.com/mutual-funds/nav/axis-focused-25-fund-growth/MAA169",
+ 	"https://www.moneycontrol.com/mutual-funds/nav/sbi-focused-equity-fund-regular-plan-growth/MSB059"
+]
+const focusedFundsMFIds = [
+	"117560",
+	"102756"
+];
+const focusedFundsNAVLimits = [
+	40,
+	210
 ];
