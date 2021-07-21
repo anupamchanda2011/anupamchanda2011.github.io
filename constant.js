@@ -98,6 +98,12 @@ const mutualFunds = [
 				"moneycontrolLink" : "https://www.moneycontrol.com/mutual-funds/nav/sbi-equity-hybrid-fund-direct-plan-growth/MSB516",
 				"amfiLink" : "https://api.mfapi.in/mf/119609",
 				"threshold" : 195
+			},
+			{
+				"name" : "SBI Debt Hybrid Fund - Direct Plan - Growth",
+				"moneycontrolLink" : "https://www.moneycontrol.com/mutual-funds/nav/sbi-debt-hybrid-fund-direct-plan-growth/MSB538",
+				"amfiLink" : "https://api.mfapi.in/mf/119839",
+				"threshold" : 50
 			}
 		]
 	}
