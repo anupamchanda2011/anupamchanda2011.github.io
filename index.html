@@ -8,18 +8,12 @@
 	  <h1>Mutual Fund Monitoring App</h1>
 	</div>
 	</br>
-	<div id="largeCap"></div></br>
-	<div id="midCap"></div></br>
-	<div id="focusedFunds"></div>
+	<div id="mutualFunds"></div>
 	<script src="constant.js"></script>
 	<script src="utility.js"></script>
 	<script type="text/javascript">
-		var largeCapTable = "<table id='funds'> <tr><th>Large Cap</th><th>NAV Value</th><th>NAV Threshold</th><th>Difference</th><th>Details</th></tr>";
-		drawTable(largeCapTable, largeCaps, mfUrl, largeCapLinks, largeCapNAVLimits, largeCapMFIds, "largeCap");
-		var midCapTable = "<table id='funds'> <tr><th>Mid Cap</th><th>NAV Value</th><th>NAV Threshold</th><th>Difference</th><th>Details</th></tr>";
-		drawTable(midCapTable, midCaps, mfUrl, midCapLinks, midCapNAVLimits, midCapMFIds, "midCap");
-		var focusedFundsTable = "<table id='funds'> <tr><th>Focused Funds</th><th>NAV Value</th><th>NAV Threshold</th><th>Difference</th><th>Details</th></tr>";
-		drawTable(focusedFundsTable, focusedFunds, mfUrl, focusedFundsLinks, focusedFundsNAVLimits, focusedFundsMFIds, "focusedFunds");
+		drawTable(mutualFunds);
+		drawPage(mutualFunds);
 	</script>
 </body>
 </html>
