@@ -11,10 +11,10 @@ function drawTableForFund(table, data, divId){
 		var mfDetails = httpGet(data[i].amfiLink);
 		var currentNAV = parseInt(mfDetails.data[0].nav);
 		if(currentNAV >= data[i].threshold){
-			table = table + "<tr><td>";
+			table = table + "<tr><td style='width: 55%'>";
 		}
 		else{
-			table = table + "<tr style='background-color:#e6ffe6;'><td>";
+			table = table + "<tr style='background-color:#e6ffe6;'><td style='width: 55%'>";
 		}
 		table = table + data[i].name + "</td><td>";
 		table = table + mfDetails.data[0].nav + "</td><td>";

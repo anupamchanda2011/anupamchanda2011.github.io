@@ -88,5 +88,17 @@ const mutualFunds = [
 				"threshold" : 225
 			}
 		]
+	},
+	{
+		"type" : "hybridFund",
+		"name" : "Hybrid Funds",
+		"data" : [
+			{
+				"name" : "SBI Equity Hybrid Fund - Direct Plan - Growth",
+				"moneycontrolLink" : "https://www.moneycontrol.com/mutual-funds/nav/sbi-equity-hybrid-fund-direct-plan-growth/MSB516",
+				"amfiLink" : "https://api.mfapi.in/mf/119609",
+				"threshold" : 195
+			}
+		]
 	}
 ];
