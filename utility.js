@@ -52,3 +52,20 @@ function drawTable(mutualFunds){
 	}
 	document.getElementById("mutualFunds").innerHTML = table;
 }
+
+function loadMutualFundList() {
+  var fundList = document.getElementById("fundType");
+    var i;
+    for (i = 0; i < fundTypes.length; i++) {
+      var fund = new Option(fundTypes[i].name, i);
+      fundList.options.add(fund);
+    }
+} 
+function validateForm(event){
+	event.preventDefault();
+	var form = document.forms["addFund"];
+	// var e = document.getElementById("fundName");
+	alert(fundTypes[form["fundType"].value].name);
+	// alert(form["link"].value);
+	return false;
+}

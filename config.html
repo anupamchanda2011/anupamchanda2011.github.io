@@ -3,23 +3,26 @@
 	<head>
 		<link rel="stylesheet" href="style.css">
 	</head>
-<body>
+<body onload="loadMutualFundList()">
 	<div class="header">
 	  <h1>Mutual Fund Monitoring App</h1>
 	</div>
-<form action="index.html" method="post" id="signup" class="formBox">
+<form action="index.html" method="post" id="addFund" class="formBox" onsubmit="validateForm(event)">
 	<div class="container">
 		<h1>Mutual Fund Details</h1>
-		 <label for="type">Fund Type</label>
-		 <input type="text" id="type" name="type" style="font-size: 25px;">
+	    <label for="type">Fund Type</label>
+	    <select id="fundType" name="fundType">
+	    </select>
 		 <label for="name">Fund Name</label>
-		 <input type="text" id="link" name="link" style="font-size: 25px;">
+		 <input type="text" id="fundName" name="fundName" >
 		 <label for="name">Money Control Link</label>
-		 <input type="text" id="link" name="link" style="font-size: 25px;">
+		 <input type="text" id="link" name="link" >
 		 <div style="padding-top: 37px;">
 			<button class="button" type="submit" style="font-size: 25px;">Submit</button>
 		</div>
 	</div>
 </form>
+<script src="utility.js"></script>
+<script src="constant.js"></script>
 </body>
 </html>

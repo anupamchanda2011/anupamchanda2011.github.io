@@ -108,3 +108,27 @@ const mutualFunds = [
 		]
 	}
 ];
+
+const fundTypes = [
+	{
+		"type" : "elss",
+		"name" : "ELSS Tax Saver"
+	},
+	{
+		"type" : "largeCap",
+		"name" : "Large Cap Funds"
+	},
+	{
+		"type" : "midCap",
+		"name" : "Mid Cap Funds"	
+	},
+	{
+		"type" : "focusedFund",
+		"name" : "Focused Funds"
+	},
+	{
+		"type" : "hybridFund",
+		"name" : "Hybrid Funds"
+	}
+
+];
