@@ -47,7 +47,7 @@ select {
 }
 
 .button {
-  width: 49%;
+  width: 100%;
   display: inline-block;
   padding: 15px 25px;
   cursor: pointer;
