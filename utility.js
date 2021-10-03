@@ -102,7 +102,6 @@ function getIndexfromMFArray(mutualFunds, mFType){
 			break;
         }
     }
-	alert(index);
 	return index;
 }
 
