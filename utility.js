@@ -61,11 +61,16 @@ function loadMutualFundList() {
       fundList.options.add(fund);
     }
 } 
-function validateForm(event){
-	event.preventDefault();
+function addFundsToLocalStorage(event){
+	// event.preventDefault();
 	var form = document.forms["addFund"];
+	var val = document.getElementById("submit");
 	// var e = document.getElementById("fundName");
-	alert(fundTypes[form["fundType"].value].name);
-	// alert(form["link"].value);
-	return false;
+	// alert(fundTypes[form["fundType"].value].name);
+	alert("hello");
+	return true;
+}
+
+function cancelForm(){
+	window.location.href = '/index.html';
 }

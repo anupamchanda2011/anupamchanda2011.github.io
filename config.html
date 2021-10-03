@@ -10,7 +10,7 @@
 	</div><br>
 	<!-- <div><a href='index.html' style="font-size: 25px;">Back</a>
 	</div></br></br> -->
-<form action="index.html" method="post" id="addFund" class="formBox" onsubmit="validateForm(event)">
+<form action="index.html" method="post" id="addFund" class="formBox">
 	<div class="container">
 		<h1>Mutual Fund Details</h1>
 	    <label for="type">Fund Type</label>
@@ -23,7 +23,8 @@
 		 <label for="name">AMFI api link</label>
 		 <input type="text" id="fundName" name="fundName">
 		 <div style="padding-top: 37px;">
-			<button class="button" type="submit" style="font-size: 25px;">Submit</button>
+			<button class="button" id="submit" type="submit" style="font-size: 25px;" onclick="addFundsToLocalStorage(event)">Submit</button>
+			<button class="button" id="submit" style="font-size: 25px; background-color: gray;">Cancel</button>
 		</div>
 	</div>
 </form>
