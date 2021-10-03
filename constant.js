@@ -104,12 +104,6 @@ const mutualFunds = [
 				"moneycontrolLink" : "https://www.moneycontrol.com/mutual-funds/nav/sbi-debt-hybrid-fund-direct-plan-growth/MSB538",
 				"amfiLink" : "https://api.mfapi.in/mf/119839",
 				"threshold" : 50
-			},
-			{
-				"name" : "HDFC Balanced Advantage Fund - Direct Plan - Growth",
-				"moneycontrolLink" : "https://www.moneycontrol.com/mutual-funds/nav/hdfc-balanced-advantage-fund-direct-plan-growth/MHD1146",
-				"amfiLink" : "https://api.mfapi.in/mf/118968",
-				"threshold" : 275
 			}
 		]
 	}

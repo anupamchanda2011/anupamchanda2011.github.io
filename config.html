@@ -10,7 +10,7 @@
 	</div><br>
 	<!-- <div><a href='index.html' style="font-size: 25px;">Back</a>
 	</div></br></br> -->
-<form action="index.html" method="post" id="addFund" class="formBox">
+<form action="index.html" method="post" id="addFund" class="formBox" onsubmit="addFundsToLocalStorage(event)">
 	<div class="container">
 		<h1>Mutual Fund Details</h1>
 	    <label for="type">Fund Type</label>
@@ -20,10 +20,12 @@
 		 <input type="text" id="fundName" name="fundName">
 		 <label for="mClink">Money Control Link</label>
 		 <input type="text" id="link" name="link" >
-		 <label for="name">AMFI api link</label>
-		 <input type="text" id="fundName" name="fundName">
+		 <label for="amfiLink">AMFI api link</label>
+		 <input type="text" id="amfiLink" name="amfiLink">
+		 <label for="thresholdValue">Threshold Value</label>
+		 <input type="text" id="thresholdValue" name="thresholdValue">
 		 <div style="padding-top: 37px;">
-			<button class="button" id="submit" type="submit" style="font-size: 25px;" onclick="addFundsToLocalStorage(event)">Submit</button>
+			<button class="button" id="submit" type="submit" style="font-size: 25px;">Submit</button>
 			<button class="button" id="submit" style="font-size: 25px; background-color: gray;">Cancel</button>
 		</div>
 	</div>

@@ -34,21 +34,23 @@ function drawTableForFund(table, data, divId){
 }
 
 function drawPage(mutualFunds){
+	var mFunds = readConfigFromLocalStorage(mutualFunds);
 	var i;
 	var table = "";
-	for(i = 0; i < mutualFunds.length; i++){
+	for(i = 0; i < mFunds.length; i++){
 		table = table + "<table id='funds'> <tr><th>";
-		table = table + mutualFunds[i].name + "</th><th>NAV Value</th><th>NAV Threshold</th><th>Difference</th><th>Details</th></tr>"
-		drawTableForFund(table, mutualFunds[i].data, mutualFunds[i].type);
+		table = table + mFunds[i].name + "</th><th>NAV Value</th><th>NAV Threshold</th><th>Difference</th><th>Details</th></tr>"
+		drawTableForFund(table, mFunds[i].data, mFunds[i].type);
 		table = "";
 	}
 }
 
 function drawTable(mutualFunds){
+	var mFunds = readConfigFromLocalStorage(mutualFunds);
 	var i;
 	var table = "";
-		for(i = 0; i < mutualFunds.length; i++){
-		table = table + "<div id='" + mutualFunds[i].type + "'></div></br>";
+		for(i = 0; i < mFunds.length; i++){
+		table = table + "<div id='" + mFunds[i].type + "'></div></br>";
 	}
 	document.getElementById("mutualFunds").innerHTML = table;
 }
@@ -64,13 +66,53 @@ function loadMutualFundList() {
 function addFundsToLocalStorage(event){
 	// event.preventDefault();
 	var form = document.forms["addFund"];
-	var val = document.getElementById("submit");
-	// var e = document.getElementById("fundName");
-	// alert(fundTypes[form["fundType"].value].name);
-	alert("hello");
-	return true;
+	var mFunds = readConfigFromLocalStorage(mutualFunds);
+	var mFType = fundTypes[form["fundType"].value].type;
+	var index = getIndexfromMFArray(mFunds, mFType);
+	var mFObject = createMFObject();
+	mFunds[index].data.push(mFObject);
+	localStorage.setItem("mutualFunds", JSON.stringify(mFunds));
+	return false;
 }
 
 function cancelForm(){
 	window.location.href = '/index.html';
+}
+
+function readConfigFromLocalStorage(mutualFunds){
+	var mFunds = localStorage.getItem("mutualFunds");
+	if(mFunds == null){
+		mFunds = mutualFunds;
+	}
+	else{
+		mFunds = JSON.parse(mFunds);
+	}
+	return (mFunds);
+}
+
+function writeConfigToLocalStorage(mutualFunds){
+	localStorage.setItem("mutualFunds", JSON.stringify(mutualFunds));
+}
+
+function getIndexfromMFArray(mutualFunds, mFType){
+	var index = mutualFunds.length;
+	for (var i=0; i < mutualFunds.length; i++) {
+        if (mutualFunds[i].type === mFType) {
+            index = i;
+			break;
+        }
+    }
+	alert(index);
+	return index;
+}
+
+function createMFObject(){
+	var form = document.forms["addFund"];
+
+	var mFJSONData = {};
+	mFJSONData["name"] = form["fundName"].value;
+	mFJSONData["moneycontrolLink"] = form["link"].value;
+	mFJSONData["amfiLink"] = form["amfiLink"].value;
+	mFJSONData["threshold"] = form["thresholdValue"].value;
+	return mFJSONData;
 }
